@@ -19,12 +19,7 @@ INSERT INTO [dbo].[Health_Admin] VALUES ('Fred','Derf','0124205698','14007192','
 INSERT INTO [dbo].[Health_Admin] VALUES ('Layla','Skywalks','0856548921','16407192','admin')
 INSERT INTO [dbo].[Health_Admin] VALUES ('Ash','Left','0742563216','16007192','admin')
 
-CREATE TABLE [Malaria] (
-  [Malaria_ID] int IDENTITY(1,1) PRIMARY KEY,
-  [Malaria_Background] varchar(500)
-);
 
-INSERT INTO [dbo].[Malaria] VALUES ('BG')
 
 CREATE TABLE [Preventative_Measure] (
   [Preventative_Measure_ID] int IDENTITY(1,1) PRIMARY KEY,
@@ -58,7 +53,7 @@ INSERT INTO [dbo].[Symptom] VALUES ('Vomiting',1)
 
 CREATE TABLE [Risk] (
   [Risk_ID] int IDENTITY(1,1) PRIMARY KEY,
-  [Risk] varchar(50)
+  [Risk_Description] varchar(50)
 );
 
 INSERT INTO [dbo].[Risk] VALUES ('High')
@@ -134,7 +129,7 @@ INSERT INTO [dbo].[Cause] VALUES ('CCA',1)
 
 CREATE TABLE [Malaria_Type] (
   [Malaria_Type_ID] int IDENTITY(1,1) PRIMARY KEY,
-  [Malaria_Type] varchar(32),
+  [Malaria_Type_Parasite] varchar(32),
   [Malaria_Type_Description] varchar(250),
   [Malaria_ID] int FOREIGN KEY REFERENCES [Malaria]([Malaria_ID])
 );
@@ -148,7 +143,7 @@ INSERT INTO [dbo].[Malaria_Type] VALUES ('Plasmodium Knowlesi','This is very rar
 CREATE TABLE [Vaccination] (
   [Vaccination_ID] int IDENTITY(1,1) PRIMARY KEY,
   [Vaccination_Name] varchar(32),
-  [Vaccination_Description] varchar(1000),
+  [Vaccination_Description] text,
   [Malaria_ID] int FOREIGN KEY REFERENCES [Malaria]([Malaria_ID])
 );
 
@@ -173,7 +168,7 @@ INSERT INTO [dbo].[Infection_Cycle] VALUES ('Person','If an uninfected mosquito 
 
 CREATE TABLE [Quick_Fact] (
   [Quick_Fact_ID] int IDENTITY(1,1) PRIMARY KEY,
-  [Fact] varchar(250),
+  [Fact] varchar(128),
   [Malaria_ID] int FOREIGN KEY REFERENCES [Malaria]([Malaria_ID])
 );
 
