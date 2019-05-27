@@ -12,4 +12,8 @@ export class AboutPage implements OnInit {
   ngOnInit() {
   }
 
+  getHomePage(){
+    this.router.navigate(['home']);
+  }
+
 }

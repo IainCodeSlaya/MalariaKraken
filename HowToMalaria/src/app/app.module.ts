@@ -10,7 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {//https://www.djamware.com/post/5be52ce280aca72b942e31bc/ionic-4-angular-7-and-cordova-tutorial-build-crud-mobile-apps
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { // https://www.djamware.com/post/5be52ce280aca72b942e31bc/ionic-4-angular-7-and-cordova-tutorial-build-crud-mobile-apps
   MatInputModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
@@ -19,7 +22,7 @@ import {//https://www.djamware.com/post/5be52ce280aca72b942e31bc/ionic-4-angular
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule } from "@angular/material";
+  MatFormFieldModule } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -28,6 +31,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
   entryComponents: [],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
