@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18f50b80634f46e29a74be441efebee9" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="MalariaModel.Cause" Width="1.5" PointX="5.875" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Country" Width="1.5" PointX="8.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Health_Admin" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Infection_Cycle" Width="1.5" PointX="3.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Malaria" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Malaria_Type" Width="1.5" PointX="3.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Preventative_Measure" Width="1.5" PointX="4.375" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Quick_Fact" Width="1.5" PointX="8.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Risk" Width="1.5" PointX="8.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Symptom" Width="1.5" PointX="6.875" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Vaccination" Width="1.5" PointX="3.5" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="MalariaModel.FK__Cause__Malaria_I__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Country__Malaria__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Country__Risk_ID__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Infection__Malar__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Malaria_T__Malar__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Preventat__Malar__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Quick_Fac__Malar__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Symptom__Malaria__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="MalariaModel.FK__Vaccinati__Malar__25869641" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
