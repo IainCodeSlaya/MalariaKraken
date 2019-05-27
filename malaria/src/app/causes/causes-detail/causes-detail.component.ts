@@ -21,7 +21,7 @@ export class CausesDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private api: CausesApiService, private router: Router) { }
 
   getCauseDetails(id) {
-    this.api.getCause(id)
+    this.api.getCauseList(id)
       .subscribe(data => {
         this.cause = data;
         console.log(this.cause);
@@ -33,7 +33,7 @@ export class CausesDetailComponent implements OnInit {
     this.getCauseDetails(this.route.snapshot.params['id'])
   }
 
-  deleteCause(id: number) {
+  /*deleteCause(id: number) {
     this.isLoadingResults = true;
     this.api.deleteCause(id)
       .subscribe(res => {
@@ -44,5 +44,5 @@ export class CausesDetailComponent implements OnInit {
         this.isLoadingResults = false;
       }
       );
-  }
+}*/
 }

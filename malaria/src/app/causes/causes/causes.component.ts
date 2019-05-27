@@ -17,7 +17,7 @@ export class CausesComponent implements OnInit {
   constructor(private api: CausesApiService) { }
 
   ngOnInit() {
-    this.api.getCauses()
+    this.api.getAllCause()
       .subscribe(res => {
         this.data = res;
         console.log(this.data);

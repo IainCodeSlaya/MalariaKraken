@@ -8,10 +8,11 @@ using System.Data;
 using System.IO;
 using System.Dynamic;
 using MalariaAPI.Models;
-
+using System.Web.Http.Cors;
 
 namespace MalariaAPI.Controllers
 {
+    [EnableCors(origins: "http://localhost:54326/", headers: "*", methods: "*")]
     [RoutePrefix("api/Cause")]
     public class CauseController : ApiController
     {

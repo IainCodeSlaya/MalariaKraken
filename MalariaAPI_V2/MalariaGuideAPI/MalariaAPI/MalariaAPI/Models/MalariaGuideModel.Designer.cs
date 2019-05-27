@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\MalariaAPI_V2\MalariaGuideAPI\MalariaAPI\MalariaAPI\Models\MalariaGuideModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\janco\Desktop\Del02Kraken\MalariaKraken\MalariaAPI_V2\MalariaGuideAPI\MalariaAPI\MalariaAPI\Models\MalariaGuideModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

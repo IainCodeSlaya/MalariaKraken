@@ -31,7 +31,7 @@ export class CausesEditComponent implements OnInit {
   }
 
   getCause(id: number) {
-    this.api.getCause(id).subscribe(data => {
+    this.api.getCauseList(id).subscribe(data => {
       this.causeId = data.causeId;
       this.causeForm.setValue({
         causeName: data.causeName,

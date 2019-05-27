@@ -8,7 +8,7 @@ import { Cause } from '../causes/causes/cause';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const apiUrl = ''; //enter api URL
+const apiUrl = 'http://localhost:54326/api/'; //enter api URL
 
 @Injectable({
   providedIn: 'root'
@@ -32,19 +32,19 @@ export class CausesApiService {
   }
 
   //CRUD
-  getCauses(): Observable<Cause[]> {
+  getAllCause(): Observable<Cause[]> {
     return this.http.get<Cause[]>(apiUrl)
       .pipe(
         tap(heroes => console.log('fetched Causes')),
-        catchError(this.handleError('getCauses', []))
+        catchError(this.handleError('getAllCause', []))
       );
   }
 
-  getCause(id: number): Observable<Cause> {
+  getCauseList(id: number): Observable<Cause> {
     const url = `${apiUrl}/${id}`;
     return this.http.get<Cause>(url).pipe(
-      tap(_ => console.log(`fetched Cuase id=${id}`)),
-      catchError(this.handleError<Cause>(`getCause id=${id}`))
+      tap(_ => console.log(`fetched Cause id=${id}`)),
+      catchError(this.handleError<Cause>(`getCauseList id=${id}`))
     );
   }
 
@@ -63,5 +63,11 @@ export class CausesApiService {
     );
   }
 
-
+  deleteCause(id: number): Observable<Cause> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.delete<Cause>(url, httpOptions).pipe(
+      tap(_ => console.log(`deleted Cause id=${id}`)),
+      catchError(this.handleError<Cause>('deleteCause'))
+    );
+  }
 }

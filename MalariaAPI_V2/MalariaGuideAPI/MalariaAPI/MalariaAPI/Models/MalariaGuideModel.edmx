@@ -98,7 +98,7 @@
           <Property Name="Vaccination_Description" Type="varchar" MaxLength="1000" />
           <Property Name="Malaria_ID" Type="int" />
         </EntityType>
-        <Association Name="FK__Cause__Malaria_I__46E78A0C">
+        <Association Name="FK__Cause__Malaria_I__1FCDBCEB">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Cause" Type="Self.Cause" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,7 +110,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Country__Malaria__440B1D61">
+        <Association Name="FK__Country__Malaria__1CF15040">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Country" Type="Self.Country" Multiplicity="*" />
           <ReferentialConstraint>
@@ -122,7 +122,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Country__Risk_ID__4316F928">
+        <Association Name="FK__Country__Risk_ID__1BFD2C07">
           <End Role="Risk" Type="Self.Risk" Multiplicity="0..1" />
           <End Role="Country" Type="Self.Country" Multiplicity="*" />
           <ReferentialConstraint>
@@ -134,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Infection__Malar__4F7CD00D">
+        <Association Name="FK__Infection__Malar__286302EC">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Infection_Cycle" Type="Self.Infection_Cycle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -146,7 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Malaria_T__Malar__49C3F6B7">
+        <Association Name="FK__Malaria_T__Malar__22AA2996">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Malaria_Type" Type="Self.Malaria_Type" Multiplicity="*" />
           <ReferentialConstraint>
@@ -158,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Preventat__Malar__3B75D760">
+        <Association Name="FK__Preventat__Malar__145C0A3F">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Preventative_Measure" Type="Self.Preventative_Measure" Multiplicity="*" />
           <ReferentialConstraint>
@@ -170,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quick_Fac__Malar__52593CB8">
+        <Association Name="FK__Quick_Fac__Malar__2B3F6F97">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Quick_Fact" Type="Self.Quick_Fact" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +182,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Symptom__Malaria__3E52440B">
+        <Association Name="FK__Symptom__Malaria__173876EA">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Symptom" Type="Self.Symptom" Multiplicity="*" />
           <ReferentialConstraint>
@@ -194,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vaccinati__Malar__4CA06362">
+        <Association Name="FK__Vaccinati__Malar__25869641">
           <End Role="Malaria" Type="Self.Malaria" Multiplicity="0..1" />
           <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
           <ReferentialConstraint>
@@ -218,39 +218,39 @@
           <EntitySet Name="Risk" EntityType="Self.Risk" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Symptom" EntityType="Self.Symptom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vaccination" EntityType="Self.Vaccination" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Cause__Malaria_I__46E78A0C" Association="Self.FK__Cause__Malaria_I__46E78A0C">
+          <AssociationSet Name="FK__Cause__Malaria_I__1FCDBCEB" Association="Self.FK__Cause__Malaria_I__1FCDBCEB">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Cause" EntitySet="Cause" />
           </AssociationSet>
-          <AssociationSet Name="FK__Country__Malaria__440B1D61" Association="Self.FK__Country__Malaria__440B1D61">
+          <AssociationSet Name="FK__Country__Malaria__1CF15040" Association="Self.FK__Country__Malaria__1CF15040">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Country" EntitySet="Country" />
           </AssociationSet>
-          <AssociationSet Name="FK__Country__Risk_ID__4316F928" Association="Self.FK__Country__Risk_ID__4316F928">
+          <AssociationSet Name="FK__Country__Risk_ID__1BFD2C07" Association="Self.FK__Country__Risk_ID__1BFD2C07">
             <End Role="Risk" EntitySet="Risk" />
             <End Role="Country" EntitySet="Country" />
           </AssociationSet>
-          <AssociationSet Name="FK__Infection__Malar__4F7CD00D" Association="Self.FK__Infection__Malar__4F7CD00D">
+          <AssociationSet Name="FK__Infection__Malar__286302EC" Association="Self.FK__Infection__Malar__286302EC">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Infection_Cycle" EntitySet="Infection_Cycle" />
           </AssociationSet>
-          <AssociationSet Name="FK__Malaria_T__Malar__49C3F6B7" Association="Self.FK__Malaria_T__Malar__49C3F6B7">
+          <AssociationSet Name="FK__Malaria_T__Malar__22AA2996" Association="Self.FK__Malaria_T__Malar__22AA2996">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Malaria_Type" EntitySet="Malaria_Type" />
           </AssociationSet>
-          <AssociationSet Name="FK__Preventat__Malar__3B75D760" Association="Self.FK__Preventat__Malar__3B75D760">
+          <AssociationSet Name="FK__Preventat__Malar__145C0A3F" Association="Self.FK__Preventat__Malar__145C0A3F">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Preventative_Measure" EntitySet="Preventative_Measure" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quick_Fac__Malar__52593CB8" Association="Self.FK__Quick_Fac__Malar__52593CB8">
+          <AssociationSet Name="FK__Quick_Fac__Malar__2B3F6F97" Association="Self.FK__Quick_Fac__Malar__2B3F6F97">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Quick_Fact" EntitySet="Quick_Fact" />
           </AssociationSet>
-          <AssociationSet Name="FK__Symptom__Malaria__3E52440B" Association="Self.FK__Symptom__Malaria__3E52440B">
+          <AssociationSet Name="FK__Symptom__Malaria__173876EA" Association="Self.FK__Symptom__Malaria__173876EA">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Symptom" EntitySet="Symptom" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vaccinati__Malar__4CA06362" Association="Self.FK__Vaccinati__Malar__4CA06362">
+          <AssociationSet Name="FK__Vaccinati__Malar__25869641" Association="Self.FK__Vaccinati__Malar__25869641">
             <End Role="Malaria" EntitySet="Malaria" />
             <End Role="Vaccination" EntitySet="Vaccination" />
           </AssociationSet>
