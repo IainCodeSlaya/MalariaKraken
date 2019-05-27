@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="MalariaModel.Health_Admin" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MalariaModel.Infection_Cycle" Width="1.5" PointX="3.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MalariaModel.Malaria" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="MalariaModel.Malaria_Type" Width="1.5" PointX="3.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MalariaModel.Malaria_Type" Width="1.375" PointX="3.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MalariaModel.Preventative_Measure" Width="1.5" PointX="4.375" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MalariaModel.Quick_Fact" Width="1.5" PointX="8.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MalariaModel.Risk" Width="1.5" PointX="8.875" PointY="1" IsExpanded="true" />

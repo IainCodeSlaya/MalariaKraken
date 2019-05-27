@@ -47,14 +47,14 @@
             <PropertyRef Name="Malaria_ID" />
           </Key>
           <Property Name="Malaria_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Malaria_Background" Type="varchar" MaxLength="500" />
+          <Property Name="Malaria_Background" Type="text" />
         </EntityType>
         <EntityType Name="Malaria_Type">
           <Key>
             <PropertyRef Name="Malaria_Type_ID" />
           </Key>
           <Property Name="Malaria_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Malaria_Type" Type="varchar" MaxLength="32" />
+          <Property Name="Malaria_Type_Parasite" Type="varchar" MaxLength="32" />
           <Property Name="Malaria_Type_Description" Type="varchar" MaxLength="250" />
           <Property Name="Malaria_ID" Type="int" />
         </EntityType>
@@ -71,7 +71,7 @@
             <PropertyRef Name="Quick_Fact_ID" />
           </Key>
           <Property Name="Quick_Fact_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fact" Type="varchar" MaxLength="250" />
+          <Property Name="Fact" Type="varchar" MaxLength="128" />
           <Property Name="Malaria_ID" Type="int" />
         </EntityType>
         <EntityType Name="Risk">
@@ -79,7 +79,7 @@
             <PropertyRef Name="Risk_ID" />
           </Key>
           <Property Name="Risk_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Risk" Type="varchar" MaxLength="50" />
+          <Property Name="Risk_Description" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Symptom">
           <Key>
@@ -95,7 +95,7 @@
           </Key>
           <Property Name="Vaccination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Vaccination_Name" Type="varchar" MaxLength="32" />
-          <Property Name="Vaccination_Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Vaccination_Description" Type="text" />
           <Property Name="Malaria_ID" Type="int" />
         </EntityType>
         <Association Name="FK__Cause__Malaria_I__1FCDBCEB">
@@ -305,7 +305,7 @@
             <PropertyRef Name="Malaria_ID" />
           </Key>
           <Property Name="Malaria_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Malaria_Background" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Malaria_Background" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Causes" Relationship="Self.FK__Cause__Malaria_I__1FCDBCEB" FromRole="Malaria" ToRole="Cause" />
           <NavigationProperty Name="Countries" Relationship="Self.FK__Country__Malaria__1CF15040" FromRole="Malaria" ToRole="Country" />
           <NavigationProperty Name="Infection_Cycle" Relationship="Self.FK__Infection__Malar__286302EC" FromRole="Malaria" ToRole="Infection_Cycle" />
@@ -320,10 +320,10 @@
             <PropertyRef Name="Malaria_Type_ID" />
           </Key>
           <Property Name="Malaria_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Malaria_Type1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="Malaria_Type_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Malaria_ID" Type="Int32" />
           <NavigationProperty Name="Malaria" Relationship="Self.FK__Malaria_T__Malar__22AA2996" FromRole="Malaria_Type" ToRole="Malaria" />
+          <Property Name="Malaria_Type_Parasite" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Preventative_Measure">
           <Key>
@@ -339,7 +339,7 @@
             <PropertyRef Name="Quick_Fact_ID" />
           </Key>
           <Property Name="Quick_Fact_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fact" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Fact" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="Malaria_ID" Type="Int32" />
           <NavigationProperty Name="Malaria" Relationship="Self.FK__Quick_Fac__Malar__2B3F6F97" FromRole="Quick_Fact" ToRole="Malaria" />
         </EntityType>
@@ -348,8 +348,8 @@
             <PropertyRef Name="Risk_ID" />
           </Key>
           <Property Name="Risk_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Risk1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Countries" Relationship="Self.FK__Country__Risk_ID__1BFD2C07" FromRole="Risk" ToRole="Country" />
+          <Property Name="Risk_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Symptom">
           <Key>
@@ -366,7 +366,7 @@
           </Key>
           <Property Name="Vaccination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Vaccination_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-          <Property Name="Vaccination_Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Vaccination_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Malaria_ID" Type="Int32" />
           <NavigationProperty Name="Malaria" Relationship="Self.FK__Vaccinati__Malar__25869641" FromRole="Vaccination" ToRole="Malaria" />
         </EntityType>
@@ -585,8 +585,8 @@
           <EntitySetMapping Name="Malaria_Type">
             <EntityTypeMapping TypeName="MalariaModel.Malaria_Type">
               <MappingFragment StoreEntitySet="Malaria_Type">
+                <ScalarProperty Name="Malaria_Type_Parasite" ColumnName="Malaria_Type_Parasite" />
                 <ScalarProperty Name="Malaria_Type_ID" ColumnName="Malaria_Type_ID" />
-                <ScalarProperty Name="Malaria_Type1" ColumnName="Malaria_Type" />
                 <ScalarProperty Name="Malaria_Type_Description" ColumnName="Malaria_Type_Description" />
                 <ScalarProperty Name="Malaria_ID" ColumnName="Malaria_ID" />
               </MappingFragment>
@@ -613,8 +613,8 @@
           <EntitySetMapping Name="Risks">
             <EntityTypeMapping TypeName="MalariaModel.Risk">
               <MappingFragment StoreEntitySet="Risk">
+                <ScalarProperty Name="Risk_Description" ColumnName="Risk_Description" />
                 <ScalarProperty Name="Risk_ID" ColumnName="Risk_ID" />
-                <ScalarProperty Name="Risk1" ColumnName="Risk" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
